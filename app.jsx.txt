@@ -1,0 +1,42 @@
+import { useState } from "react";
+
+export default function App() {
+  const [url, setUrl] = useState("");
+  const [result, setResult] = useState(null);
+
+  function runAudit() {
+    setResult({
+      meta: "Missing",
+      images: 5,
+      h1: 1,
+      title: "52 characters",
+      links: 3,
+    });
+  }
+
+  return (
+    <div style={{ padding: "40px", fontFamily: "sans-serif" }}>
+      <h1>🔧 5-Minute SEO Audit Tool</h1>
+
+      <input
+        type="text"
+        placeholder="Enter URL"
+        value={url}
+        onChange={(e) => setUrl(e.target.value)}
+        style={{ padding: "10px", width: "300px", marginRight: "10px" }}
+      />
+
+      <button onClick={runAudit}>Run Audit</button>
+
+      {result && (
+        <div style={{ marginTop: "20px" }}>
+          <p>Meta Description: {result.meta}</p>
+          <p>Images without alt: {result.images}</p>
+          <p>H1 Count: {result.h1}</p>
+          <p>Title Length: {result.title}</p>
+          <p>Internal Links: {result.links}</p>
+        </div>
+      )}
+    </div>
+  );
+}
