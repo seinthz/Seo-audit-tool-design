@@ -9,8 +9,7 @@ Built with vanilla JavaScript + React UI.
 ## 🚀 Live Demo
 
 👉 https://your-tool.vercel.app  
-*(Replace with your actual deployed link)*
-
+https://seo-audit-tool-design.vercel.app/
 ---
 
 ## 🧠 Why This Exists
